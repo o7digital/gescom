@@ -31,12 +31,20 @@
 	background-color: #1a1a1a !important;
 }
 
+#header-wrap {
+	background-color: #1a1a1a !important;
+}
+
 #header .menu-link {
 	color: #ffffff !important;
 }
 
 #header .menu-link:hover {
 	color: var(--cnvs-secondary-color) !important;
+}
+
+.top-links-item > a {
+	color: #ffffff !important;
 }
 
 .color-2,
