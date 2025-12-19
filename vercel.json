@@ -1,0 +1,14 @@
+{
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "finance-template-clean",
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/demo-finance.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
