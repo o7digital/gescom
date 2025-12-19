@@ -3,10 +3,10 @@
 -----------------------------------------------------------------*/
 
 :root {
-	--cnvs-themecolor: #264653;
-	--cnvs-themecolor-rgb: 38, 70, 83;
-	--cnvs-secondary-color: #E9C46A;
-	--cnvs-secondary-color-rgb: 233, 196, 106;
+	--cnvs-themecolor: #1a1a1a;
+	--cnvs-themecolor-rgb: 26, 26, 26;
+	--cnvs-secondary-color: #FF9800;
+	--cnvs-secondary-color-rgb: 255, 152, 0;
 
 	--cnvs-body-font: 'Manrope', sans-serif;
 	--cnvs-primary-font: 'DM Serif Text', serif;
