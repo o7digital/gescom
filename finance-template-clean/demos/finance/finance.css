@@ -28,11 +28,11 @@
 	--cnvs-primary-menu-submenu-bg: var(--cnvs-themecolor);
 	--cnvs-primary-menu-submenu-width: 240px;
 	--cnvs-primary-menu-submenu-hover-bg: transparent;
-	background-color: #1a1a1a !important;
+	background-color: #070909 !important;
 }
 
 #header-wrap {
-	background-color: #1a1a1a !important;
+	background-color: #070909 !important;
 }
 
 #header .menu-link {
