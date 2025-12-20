@@ -47,6 +47,13 @@
 	color: var(--cnvs-secondary-color) !important;
 }
 
+/* Menu Hamburger - Lignes blanches */
+.cnvs-hamburger-inner,
+.cnvs-hamburger-inner::before,
+.cnvs-hamburger-inner::after {
+	background-color: #ffffff !important;
+}
+
 .top-links-item > a {
 	color: #ffffff !important;
 }
