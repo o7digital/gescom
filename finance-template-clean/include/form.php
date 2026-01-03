@@ -27,8 +27,8 @@ require 'phpmailer/src/SMTP.php';
 $toemails = array();
 
 $toemails[] = array(
-	'email' => 'your-email@website.com', // Your Email Address
-	'name' => 'Your Name' // Your Name
+	'email' => 'gescom.mauricie@gmail.com', // Your Email Address
+	'name' => 'GESCOM' // Your Name
 );
 
 
@@ -37,8 +37,8 @@ $toemails[] = array(
 ---------------------------------------------------*/
 
 $fromemail = array(
-	'email' => 'no-reply@website.com', // Company's Email Address (preferably currently used Domain Name)
-	'name' => 'Company Name' // Company Name
+	'email' => 'contact@gescom.digital', // Company's Email Address (preferably currently used Domain Name)
+	'name' => 'GESCOM - Contact' // Company Name
 );
 
 
@@ -66,6 +66,15 @@ $mail = new PHPMailer();
 
 /* Add your SMTP Codes after this Line */
 
+// Configuration SMTP Gmail
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'gescom.mauricie@gmail.com';
+$mail->Password = 'YOUR_GMAIL_APP_PASSWORD'; // À remplacer par le mot de passe d'application Gmail
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->Port = 587;
+$mail->CharSet = 'UTF-8';
 
 // End of SMTP
 
@@ -75,12 +84,12 @@ $mail = new PHPMailer();
 ---------------------------------------------------*/
 
 $message = array(
-	'success'			=> 'We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.',
-	'error'				=> 'Email <strong>could not</strong> be sent due to some Unexpected Error. Please Try Again later.',
-	'error_bot'			=> 'Bot Detected! Form could not be processed! Please Try Again!',
-	'error_unexpected'	=> 'An <strong>unexpected error</strong> occured. Please Try Again later.',
-	'captcha_invalid'	=> 'Captcha not Validated! Please Try Again!',
-	'captcha_error'		=> 'Captcha not Submitted! Please Try Again.'
+	'success'			=> 'Nous avons <strong>bien reçu</strong> votre message et vous répondrons dans les plus brefs délais.',
+	'error'				=> 'L\'email <strong>n\'a pas pu être envoyé</strong> en raison d\'une erreur. Veuillez réessayer plus tard.',
+	'error_bot'			=> 'Bot détecté ! Le formulaire ne peut pas être traité. Veuillez réessayer !',
+	'error_unexpected'	=> 'Une <strong>erreur inattendue</strong> s\'est produite. Veuillez réessayer plus tard.',
+	'captcha_invalid'	=> 'Captcha non validé ! Veuillez réessayer !',
+	'captcha_error'		=> 'Captcha non soumis ! Veuillez réessayer.'
 );
 
 
