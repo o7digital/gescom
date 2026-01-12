@@ -18,3 +18,45 @@
 	}
 }
 
+.cookie-banner {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	background: #fff;
+	border-top: 1px solid rgba(0,0,0,0.08);
+	padding: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.cookie-banner--hidden {
+	transform: translateY(120%);
+	opacity: 0;
+	pointer-events: none;
+}
+
+.cookie-banner__text {
+	flex: 1 1 320px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #444;
+	margin: 0;
+}
+
+.cookie-banner__link {
+	color: #264653;
+	text-decoration: underline;
+}
+
+.cookie-banner__actions {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
