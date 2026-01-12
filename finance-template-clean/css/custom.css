@@ -5,3 +5,16 @@
 	Overwriting Default Theme Styles for Better Handling Updates
 -----------------------------------------------------------------*/
 
+.language-switch .menu-link {
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+}
+
+@media (min-width: 992px) {
+	.language-switch {
+		margin-left: 12px;
+	}
+}
+
