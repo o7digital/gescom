@@ -3,7 +3,10 @@
   const LEAD_URL = 'https://www.o7digital.com/api/o7-lead';
   const CLIENT_ID = 'gescom';
 
-  const copy = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('en')
+  const pageLang = (document.documentElement.lang || '').toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  const isEnglish = pageLang.startsWith('en') || path.includes('-en') || path.includes('/en/');
+  const copy = isEnglish
     ? {
         launcher: 'Need help?',
         subtitle: 'GESCOM assistant · Online',
