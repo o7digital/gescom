@@ -4,7 +4,7 @@
   document.head.appendChild(style);
   const root = document.createElement("div");
   root.id = "o7-offline";
-  root.innerHTML = `<section class="o7-offline-panel"><header class="o7-offline-head"><div><strong>Olivia AI</strong><small>Offline · Add more credit</small></div><button type="button">×</button></header><div class="o7-offline-messages"><p>Offline</p><p>Add more credit</p></div><div class="o7-offline-form"><input disabled placeholder="Offline — Add more credit"><button disabled>Send</button></div></section><button type="button" class="o7-offline-toggle"><b>O</b>Offline — Add more credit</button>`;
+  root.innerHTML = `<section class="o7-offline-panel"><header class="o7-offline-head"><div><strong>Olivia AI</strong><small>Offline</small></div><button type="button">×</button></header><div class="o7-offline-messages"><p>Offline</p></div><div class="o7-offline-form"><input disabled placeholder="Offline"><button disabled>Send</button></div></section><button type="button" class="o7-offline-toggle"><b>O</b>Offline</button>`;
   document.body.appendChild(root);
   const panel = root.querySelector(".o7-offline-panel");
   root.querySelector(".o7-offline-toggle").addEventListener("click", () => panel.classList.toggle("open"));
