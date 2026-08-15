@@ -85,3 +85,43 @@
 	}
 }
 
+.testimonial-card {
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+}
+
+.testimonial-stars {
+	white-space: nowrap;
+}
+
+.testimonial-copy {
+	margin-bottom: 0;
+}
+
+.testimonial-author {
+	align-self: end;
+}
+
+.testimonial-avatar {
+	width: 60px;
+	height: 60px;
+	flex: 0 0 60px;
+	object-fit: cover;
+}
+
+@media (min-width: 992px) {
+	.testimonials-row {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-rows: repeat(4, auto);
+		align-items: stretch;
+	}
+
+	.testimonial-card {
+		grid-row: span 4;
+		grid-template-rows: subgrid;
+		width: auto;
+		margin-top: 0 !important;
+	}
+}
+
