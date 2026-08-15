@@ -105,7 +105,7 @@
         <button class="olivia-close" type="button" aria-label="${copy.close}">×</button>
       </header>
       <div class="olivia-messages" aria-live="polite"></div>
-      <form class="olivia-lead">
+      <form class="olivia-lead" hidden>
         <p>${copy.lead}</p>
         <div class="olivia-grid">
           <input name="firstName" autocomplete="given-name" placeholder="${copy.firstName}" required>
