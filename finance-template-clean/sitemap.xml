@@ -9,11 +9,19 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://gescom.digital/demo-finance-es.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://gescom.digital/contact.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gescom.digital/contact-en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gescom.digital/contacto.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -25,11 +33,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gescom.digital/acerca-de.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gescom.digital/politique-confidentialite.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://gescom.digital/privacy-policy.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://gescom.digital/politica-de-privacidad.html</loc>
     <priority>0.4</priority>
   </url>
 </urlset>
