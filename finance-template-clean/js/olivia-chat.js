@@ -277,3 +277,10 @@
   pollOperatorMessages();
   window.setInterval(pollOperatorMessages, 5000);
 })();
+if (!document.querySelector('script[data-olivia-floating-theme]')) {
+  const oliviaTheme = document.createElement('script');
+  oliviaTheme.src = 'https://olivia-ai.o7digital.com/olivia-floating-theme.js';
+  oliviaTheme.defer = true;
+  oliviaTheme.dataset.oliviaFloatingTheme = 'true';
+  document.head.appendChild(oliviaTheme);
+}
