@@ -1,0 +1,110 @@
+:root {
+  --olivia-bg: #264653;
+  --olivia-bg-dark: #1f3a46;
+  --olivia-accent: #e9c46a;
+  --olivia-ink: #14213d;
+  --olivia-soft: #f8f5ee;
+}
+
+#olivia-chat-root {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2147483000;
+  font-family: Manrope, Arial, sans-serif;
+}
+
+#olivia-chat-root * { box-sizing: border-box; }
+.olivia-lead[hidden] { display: none !important; }
+
+.olivia-launcher {
+  border: 0;
+  border-radius: 999px;
+  background: var(--olivia-bg);
+  color: #fff;
+  box-shadow: 0 18px 40px rgba(38, 70, 83, 0.32);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 12px;
+}
+
+.olivia-launcher__mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--olivia-accent);
+  color: var(--olivia-ink);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.olivia-launcher__text { font-size: 15px; font-weight: 800; line-height: 1.15; text-align: left; }
+
+.olivia-panel {
+  width: min(420px, calc(100vw - 28px));
+  height: min(720px, calc(100vh - 90px));
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(38, 70, 83, 0.18);
+  box-shadow: 0 26px 70px rgba(20, 33, 61, 0.28);
+  display: none;
+  flex-direction: column;
+}
+
+#olivia-chat-root.is-open .olivia-panel { display: flex; }
+#olivia-chat-root.is-open .olivia-launcher { display: none; }
+
+.olivia-head {
+  background: linear-gradient(135deg, var(--olivia-bg), var(--olivia-bg-dark));
+  color: #fff;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.olivia-title { margin: 0; color: #fff; font-size: 22px; font-weight: 900; }
+.olivia-status { margin: 4px 0 0; opacity: .82; font-size: 14px; }
+.olivia-close { border: 0; background: rgba(255,255,255,.14); color: #fff; border-radius: 14px; width: 44px; height: 44px; font-size: 22px; font-weight: 900; cursor: pointer; }
+
+.olivia-messages {
+  flex: 1;
+  min-height: 130px;
+  padding: 18px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #fff, var(--olivia-soft));
+}
+
+.olivia-msg { max-width: 88%; margin: 0 0 12px; padding: 12px 14px; border-radius: 18px; font-size: 15px; line-height: 1.4; white-space: pre-wrap; }
+.olivia-msg.bot { background: #eef2f1; color: #1f2933; border-bottom-left-radius: 6px; }
+.olivia-msg.user { margin-left: auto; background: var(--olivia-bg); color: #fff; border-bottom-right-radius: 6px; }
+
+.olivia-lead { border-top: 1px solid rgba(38, 70, 83, .12); padding: 13px 18px; background: #fff; }
+.olivia-lead > p { margin: 0 0 9px; font-size: 13px; color: #5c6770; }
+.olivia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.olivia-grid input, .olivia-grid textarea { width: 100%; border: 1px solid #d7dedc; border-radius: 12px; padding: 9px 11px; font: inherit; font-size: 13px; }
+.olivia-grid textarea { grid-column: 1 / -1; min-height: 72px; resize: vertical; }
+.olivia-consent { display: flex; align-items: flex-start; gap: 8px; margin-top: 9px; font-size: 11px; line-height: 1.35; color: #5c6770; }
+.olivia-consent input { margin-top: 2px; }
+.olivia-consent a { color: var(--olivia-bg); text-decoration: underline; }
+.olivia-lead .olivia-lead-error { margin: 6px 0 0; color: #b42318; font-size: 11px; }
+.olivia-lead button { width: 100%; margin-top: 8px; border: 0; border-radius: 13px; padding: 11px 13px; background: var(--olivia-accent); color: var(--olivia-ink); font-weight: 900; cursor: pointer; }
+
+.olivia-form { padding: 12px 18px 16px; display: grid; grid-template-columns: 1fr 52px; gap: 10px; background: #fff; border-top: 1px solid rgba(38, 70, 83, .12); }
+.olivia-form input { min-width: 0; border: 1px solid #d7dedc; border-radius: 16px; padding: 13px 14px; font: inherit; }
+.olivia-form button { border: 0; border-radius: 16px; background: var(--olivia-bg); color: #fff; font-size: 22px; font-weight: 900; cursor: pointer; }
+
+@media (max-width: 520px) {
+  #olivia-chat-root { right: 8px; bottom: 8px; }
+  .olivia-panel { width: calc(100vw - 16px); height: calc(100dvh - 16px); border-radius: 18px; }
+  .olivia-grid { grid-template-columns: 1fr; }
+  .olivia-grid textarea { grid-column: auto; }
+  .olivia-head { padding: 14px 16px; }
+  .olivia-messages { padding: 14px; }
+}
