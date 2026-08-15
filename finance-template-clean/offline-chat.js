@@ -1,0 +1,12 @@
+(() => {
+  const style = document.createElement("style");
+  style.textContent = `#o7-offline{position:fixed;right:22px;bottom:22px;z-index:2147483646;font:14px/1.4 Arial,sans-serif;color:#fff}#o7-offline *{box-sizing:border-box}.o7-offline-panel{display:none;width:min(380px,calc(100vw - 28px));margin-bottom:12px;overflow:hidden;border:1px solid #caa45d;border-radius:16px;background:#12233d;box-shadow:0 22px 60px #0007}.o7-offline-panel.open{display:block}.o7-offline-head{display:flex;justify-content:space-between;padding:16px 18px;background:#0b1729}.o7-offline-head strong,.o7-offline-head small{display:block}.o7-offline-head strong{color:#e2bc72;font-size:18px}.o7-offline-head small{margin-top:4px;color:#ffb5b5}.o7-offline-head button{border:0;background:transparent;color:#fff;font-size:24px;cursor:pointer}.o7-offline-messages{padding:18px;min-height:170px}.o7-offline-messages p{width:fit-content;padding:10px 13px;border-radius:12px;background:#ffffff18}.o7-offline-form{display:flex;gap:8px;padding:13px;background:#0b1729}.o7-offline-form input{min-width:0;flex:1;padding:11px;border:0;border-radius:8px}.o7-offline-form button{border:0;border-radius:8px;background:#e2bc72;padding:0 14px;font-weight:700}.o7-offline-form :disabled{opacity:.55}.o7-offline-toggle{display:flex;align-items:center;gap:9px;border:1px solid #caa45d;border-radius:999px;background:#12233d;color:#fff;padding:11px 15px;box-shadow:0 14px 38px #0006;cursor:pointer}.o7-offline-toggle b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e2bc72;color:#12233d}@media(max-width:520px){#o7-offline{right:12px;bottom:12px}}`;
+  document.head.appendChild(style);
+  const root = document.createElement("div");
+  root.id = "o7-offline";
+  root.innerHTML = `<section class="o7-offline-panel"><header class="o7-offline-head"><div><strong>Olivia AI</strong><small>Offline</small></div><button type="button">×</button></header><div class="o7-offline-messages"><p>Offline</p></div><div class="o7-offline-form"><input disabled placeholder="Offline"><button disabled>Send</button></div></section><button type="button" class="o7-offline-toggle"><b>O</b>Offline</button>`;
+  document.body.appendChild(root);
+  const panel = root.querySelector(".o7-offline-panel");
+  root.querySelector(".o7-offline-toggle").addEventListener("click", () => panel.classList.toggle("open"));
+  root.querySelector(".o7-offline-head button").addEventListener("click", () => panel.classList.remove("open"));
+})();

@@ -3,9 +3,16 @@
   const LEAD_URL = 'https://www.o7digital.com/api/o7-lead';
   const CLIENT_ID = 'gescom';
 
-  const copy = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('en')
+  const pageLang = (document.documentElement.lang || '').toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  const isEnglish = pageLang.startsWith('en') || path.includes('-en') || path.includes('/en/');
+  const isSpanish = pageLang.startsWith('es') || path.includes('-es') || path.includes('/es/');
+  const copy = isEnglish
     ? {
         launcher: 'Need help?',
+        openChat: 'Open Sophie chat',
+        close: 'Close',
+        send: 'Send',
         subtitle: 'GESCOM assistant · Online',
         hello: 'Hello, I am Sophie. How can I help you with your administrative needs?',
         lead: 'Leave your details so GESCOM can contact you.',
@@ -18,8 +25,29 @@
         input: 'Write your question...',
         error: 'I could not send the message. You can contact GESCOM at gescom.mauricie@gmail.com or +1 (819) 996-1177.',
       }
+    : isSpanish
+    ? {
+        launcher: '¿Necesita ayuda?',
+        openChat: 'Abrir el chat de Sophie',
+        close: 'Cerrar',
+        send: 'Enviar',
+        subtitle: 'Asistente GESCOM · En línea',
+        hello: 'Hola, soy Sophie. ¿Cómo puedo ayudarle con sus necesidades administrativas?',
+        lead: 'Deje sus datos para que GESCOM pueda contactarle.',
+        firstName: 'Nombre',
+        lastName: 'Apellidos',
+        email: 'Correo electrónico',
+        phone: 'Teléfono',
+        sendLead: 'Enviar mis datos',
+        sent: 'Gracias. Sus datos fueron enviados y GESCOM se pondrá en contacto con usted pronto.',
+        input: 'Escriba su pregunta...',
+        error: 'No pude enviar el mensaje. Puede contactar con GESCOM en gescom.mauricie@gmail.com o en el +1 (819) 996-1177.',
+      }
     : {
         launcher: 'Besoin d’aide ?',
+        openChat: 'Ouvrir le chat Sophie',
+        close: 'Fermer',
+        send: 'Envoyer',
         subtitle: 'Assistante GESCOM · En ligne',
         hello: 'Bonjour, je suis Sophie. Comment puis-je vous aider pour vos besoins administratifs ?',
         lead: 'Laissez vos coordonnées pour que GESCOM puisse vous contacter.',
@@ -36,14 +64,14 @@
   const root = document.createElement('div');
   root.id = 'sophie-chat-root';
   root.innerHTML = `
-    <button class="sophie-launcher" type="button" aria-label="Ouvrir le chat Sophie">
+    <button class="sophie-launcher" type="button" aria-label="${copy.openChat}">
       <span class="sophie-launcher__mark">S</span>
       <span class="sophie-launcher__text">${copy.launcher}<br><strong>Sophie</strong></span>
     </button>
     <section class="sophie-panel" aria-label="Chat Sophie">
       <header class="sophie-head">
         <div><h2 class="sophie-title">SOPHIE</h2><p class="sophie-status">${copy.subtitle}</p></div>
-        <button class="sophie-close" type="button" aria-label="Fermer">×</button>
+        <button class="sophie-close" type="button" aria-label="${copy.close}">×</button>
       </header>
       <div class="sophie-messages" aria-live="polite"></div>
       <div class="sophie-lead">
@@ -58,7 +86,7 @@
       </div>
       <form class="sophie-form">
         <input name="message" autocomplete="off" placeholder="${copy.input}">
-        <button type="submit" aria-label="Envoyer">›</button>
+        <button type="submit" aria-label="${copy.send}">›</button>
       </form>
     </section>`;
 
