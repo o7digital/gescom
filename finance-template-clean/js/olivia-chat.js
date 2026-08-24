@@ -1,6 +1,7 @@
 (function () {
   const CHAT_URL = 'https://olivia-ai.o7digital.com/api/olivia/chat';
   const CONVERSATIONS_URL = 'https://olivia-ai.o7digital.com/api/widget/conversations';
+  const IDENTITY_URL = 'https://olivia-ai.o7digital.com/api/widget/identity';
   const FORMSPREE_URL = 'https://formspree.io/f/xpqwyozb';
   const CLIENT_CODE = 'gescom';
   const pageLanguage = (document.documentElement.lang || 'fr').toLowerCase();
@@ -90,6 +91,7 @@
   }
 
   let savedLead = readLead();
+  let identityPromise;
   let conversationStatus = 'ai';
   const displayedOperatorMessages = new Set();
   const root = document.createElement('div');
@@ -152,8 +154,44 @@
     };
   }
 
+  async function getIdentity(refresh) {
+    if (refresh) identityPromise = null;
+    if (!identityPromise) {
+      identityPromise = fetch(IDENTITY_URL, { cache: 'no-store' })
+        .then(async (response) => {
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || data.clientCode !== CLIENT_CODE || !data.identity) {
+            throw new Error(`Identity ${response.status}`);
+          }
+          return data.identity;
+        })
+        .catch((error) => {
+          identityPromise = null;
+          throw error;
+        });
+    }
+    return identityPromise;
+  }
+
+  async function oliviaFetch(url, options, retry) {
+    const requestOptions = options || {};
+    const identity = await getIdentity(false);
+    const response = await fetch(url, {
+      ...requestOptions,
+      headers: {
+        ...(requestOptions.headers || {}),
+        'X-Olivia-Widget-Identity': identity,
+      },
+    });
+    if (response.status === 401 && retry !== false) {
+      await getIdentity(true);
+      return oliviaFetch(url, requestOptions, false);
+    }
+    return response;
+  }
+
   async function saveChannelMessage(content, extraMetadata) {
-    const response = await fetch(CONVERSATIONS_URL, {
+    const response = await oliviaFetch(CONVERSATIONS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -175,7 +213,7 @@
   }
 
   async function saveAiReply(content, model) {
-    await fetch(CONVERSATIONS_URL, {
+    await oliviaFetch(CONVERSATIONS_URL, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ clientCode: CLIENT_CODE, visitorId, content, model }),
@@ -184,7 +222,7 @@
 
   async function pollOperatorMessages() {
     try {
-      const response = await fetch(`${CONVERSATIONS_URL}?clientCode=${CLIENT_CODE}&visitorId=${encodeURIComponent(visitorId)}`, { cache: 'no-store' });
+      const response = await oliviaFetch(`${CONVERSATIONS_URL}?clientCode=${CLIENT_CODE}&visitorId=${encodeURIComponent(visitorId)}`, { cache: 'no-store' });
       if (!response.ok) return;
       const data = await response.json();
       conversationStatus = data.status || conversationStatus;
@@ -252,7 +290,7 @@
     try {
       const stored = await saveChannelMessage(message, { type: 'chat' });
       if ((stored.conversation?.status || conversationStatus) !== 'ai') return;
-      const response = await fetch(CHAT_URL, {
+      const response = await oliviaFetch(CHAT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -275,6 +313,7 @@
   });
 
   pollOperatorMessages();
+  getIdentity(false).catch(() => {});
   window.setInterval(pollOperatorMessages, 5000);
 })();
 if (!document.querySelector('script[data-olivia-floating-theme]')) {
