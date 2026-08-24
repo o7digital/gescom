@@ -41,6 +41,10 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://gescom.digital/mentions-legales.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://gescom.digital/privacy-policy.html</loc>
     <priority>0.4</priority>
   </url>
