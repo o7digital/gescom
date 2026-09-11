@@ -4,7 +4,7 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
-	<meta name="author" content="SemiColonWeb">
+	<meta name="author" content="GESCOM">
 	<meta name="description" content="Contactez GESCOM, adjointe administrative en Mauricie (Trois-Rivières, Shawinigan) pour déléguer vos tâches administratives, devis, facturation et gestion des courriels.">
 
 	<!-- Font Imports -->
@@ -14,13 +14,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 	<!-- Core Style -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.min.css?v=20260911">
 
 	<!-- Font Icons -->
 	<link rel="stylesheet" href="css/font-icons.css">
 
 	<!-- Plugins/Components CSS -->
-	<link rel="stylesheet" href="css/swiper.css">
 
 	<!-- Niche Demos -->
 	<link rel="stylesheet" href="demos/finance/finance.css">
@@ -128,6 +127,48 @@
 		}
 	</style>
 
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://gescom.digital/#business",
+  "name": "GESCOM",
+  "legalName": "9517-6806 Québec inc",
+  "url": "https://gescom.digital/",
+  "telephone": "+1-819-996-1177",
+  "email": "gescom.mauricie@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1030, avenue Muguette",
+    "addressLocality": "Saint-Élie-de-Caxton",
+    "addressRegion": "QC",
+    "postalCode": "G0X 2N0",
+    "addressCountry": "CA"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Mauricie, Québec"
+    },
+    {
+      "@type": "City",
+      "name": "Trois-Rivières"
+    },
+    {
+      "@type": "City",
+      "name": "Shawinigan"
+    },
+    {
+      "@type": "City",
+      "name": "Saint-Élie-de-Caxton"
+    },
+    {
+      "@type": "Country",
+      "name": "Canada"
+    }
+  ],
+  "image": "https://gescom.digital/demos/finance/images/aurelie-portrait.webp",
+  "logo": "https://gescom.digital/images/logo.webp"
+}</script>
 </head>
 
 <body class="stretched">
@@ -146,7 +187,7 @@
 						<!-- Logo
 						============================================= -->
 					<div id="logo" class="mx-0 me-lg-5 order-1 order-lg-1">
-						<a href="demo-finance.html">
+						<a href="/">
 							<img class="logo-default" src="images/logo.webp" alt="GESCOM Logo" style="height: 130px;">
 							<img class="logo-dark" src="images/logo.webp" alt="GESCOM Logo" style="height: 130px;">
 						</a>
@@ -164,8 +205,8 @@
 						<nav class="primary-menu me-lg-auto with-arrows order-12 order-lg-2">
 
 							<ul class="menu-container">
-								<li class="menu-item"><a class="menu-link" href="demo-finance.html"><div>Home</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="demo-finance.html#services"><div>Services</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="/"><div>Home</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="/#services"><div>Services</div></a></li>
 						<li class="menu-item"><a class="menu-link" href="a-propos.html"><div>A Propos<br>de Gescom</div></a></li>
 						<li class="menu-item current"><a class="menu-link" href="contact.html"><div>Contact</div></a></li>
 						<li class="menu-item language-switch ms-lg-2"><a class="menu-link" href="contact-en.html"><div>EN</div></a></li>
@@ -441,23 +482,10 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.bundle.js"></script>
+	<script src="js/jquery.js" defer></script>
+	<script src="js/functions.min.js?v=20260911" defer></script>
 
-	<script>
-		jQuery(document).ready( function(){
-			var lastScrollTop = 0;
-			window.addEventListener("scroll", function(event){
-				var st = jQuery(this).scrollTop();
-				if (st > lastScrollTop){
-					jQuery('#header.sticky-on-scrollup').removeClass('show-sticky-onscroll'); // Down Scroll
-				} else {
-					jQuery('#header.sticky-on-scrollup').addClass('show-sticky-onscroll'); // Up Scroll
-				}
-				lastScrollTop = st;
-			});
-		});
-	</script>
+	<script src="js/site.js?v=20260911" defer></script>
 
 
 	<link rel="stylesheet" href="css/olivia-chat.css?v=20260814-1">

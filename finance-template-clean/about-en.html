@@ -4,7 +4,7 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
-	<meta name="author" content="SemiColonWeb">
+	<meta name="author" content="GESCOM">
 	<meta name="description" content="About GESCOM, administrative assistant in Mauricie: mission, values and support for entrepreneurs and SMEs (Trois-Rivières, Shawinigan) with their administrative tasks.">
 
 	<!-- Font Imports -->
@@ -13,13 +13,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Text&display=swap" rel="stylesheet">
 
 	<!-- Core Style -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.min.css?v=20260911">
 
 	<!-- Font Icons -->
 	<link rel="stylesheet" href="css/font-icons.css">
 
 	<!-- Plugins/Components CSS -->
-	<link rel="stylesheet" href="css/swiper.css">
 
 	<!-- Niche Demos -->
 	<link rel="stylesheet" href="demos/finance/finance.css">
@@ -47,6 +46,48 @@
 	============================================= -->
 	<title>About - GESCOM | Administrative Assistant in Mauricie</title>
 
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://gescom.digital/#business",
+  "name": "GESCOM",
+  "legalName": "9517-6806 Québec inc",
+  "url": "https://gescom.digital/",
+  "telephone": "+1-819-996-1177",
+  "email": "gescom.mauricie@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1030, avenue Muguette",
+    "addressLocality": "Saint-Élie-de-Caxton",
+    "addressRegion": "QC",
+    "postalCode": "G0X 2N0",
+    "addressCountry": "CA"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Mauricie, Québec"
+    },
+    {
+      "@type": "City",
+      "name": "Trois-Rivières"
+    },
+    {
+      "@type": "City",
+      "name": "Shawinigan"
+    },
+    {
+      "@type": "City",
+      "name": "Saint-Élie-de-Caxton"
+    },
+    {
+      "@type": "Country",
+      "name": "Canada"
+    }
+  ],
+  "image": "https://gescom.digital/demos/finance/images/aurelie-portrait.webp",
+  "logo": "https://gescom.digital/images/logo.webp"
+}</script>
 </head>
 
 <body class="stretched">
@@ -127,7 +168,7 @@
 				<div class="container my-5">
 					<div class="row align-items-center">
 						<div class="col-lg-6 mb-5 mb-lg-0">
-				<img src="demos/finance/images/man.png" alt="Aurélie Genin - GESCOM, administrative assistant in Mauricie" class="rounded-6 shadow-lg">
+				<img fetchpriority="high" decoding="async" src="demos/finance/images/man.png" alt="Aurélie Genin - GESCOM, administrative assistant in Mauricie" class="rounded-6 shadow-lg">
 						</div>
 						<div class="col-lg-6 ps-lg-5">
 							<h5 class="text-uppercase font-body ls-2 color-2 mb-3">Our Story</h5>
@@ -421,23 +462,10 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.bundle.js"></script>
+	<script src="js/jquery.js" defer></script>
+	<script src="js/functions.min.js?v=20260911" defer></script>
 
-	<script>
-		jQuery(document).ready( function(){
-			var lastScrollTop = 0;
-			window.addEventListener("scroll", function(event){
-				var st = jQuery(this).scrollTop();
-				if (st > lastScrollTop){
-					jQuery('#header.sticky-on-scrollup').removeClass('show-sticky-onscroll'); // Down Scroll
-				} else {
-					jQuery('#header.sticky-on-scrollup').addClass('show-sticky-onscroll'); // Up Scroll
-				}
-				lastScrollTop = st;
-			});
-		});
-	</script>
+	<script src="js/site.js?v=20260911" defer></script>
 
 
 	<link rel="stylesheet" href="css/olivia-chat.css?v=20260814-1">

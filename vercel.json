@@ -1,5 +1,5 @@
 {
-  "buildCommand": "echo 'No build needed'",
+  "buildCommand": "npm run build",
   "outputDirectory": "finance-template-clean",
   "routes": [
     {
