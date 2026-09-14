@@ -27,6 +27,8 @@ try {
     });
     for (const [language, locale] of Object.entries(locales)) {
       await page.goto(baseURL + locale.home, { waitUntil: 'networkidle' });
+      const heroRatioError = await page.locator('img[fetchpriority="high"]').evaluate(img => Math.abs(img.getBoundingClientRect().height - img.getBoundingClientRect().width * img.naturalHeight / img.naturalWidth));
+      assert.ok(heroRatioError < 1, `${language}: hero image must preserve its proportions`);
       await page.waitForFunction(() => !!window.SEMICOLON?.Core.getVars.resizers.menus);
       if (width === 390) {
         await page.locator('.primary-menu-trigger button').click();
