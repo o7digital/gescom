@@ -4,7 +4,7 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
-	<meta name="author" content="SemiColonWeb">
+	<meta name="author" content="GESCOM">
 	<meta name="description" content="Acerca de GESCOM, asistente administrativa en Mauricie: misión, valores y apoyo a emprendedores y pymes de Trois-Rivières y Shawinigan.">
 
 	<!-- Font Imports -->
@@ -13,13 +13,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Text&display=swap" rel="stylesheet">
 
 	<!-- Core Style -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.min.css?v=20260911">
 
 	<!-- Font Icons -->
 	<link rel="stylesheet" href="css/font-icons.css">
 
 	<!-- Plugins/Components CSS -->
-	<link rel="stylesheet" href="css/swiper.css">
 
 	<!-- Niche Demos -->
 	<link rel="stylesheet" href="demos/finance/finance.css">
@@ -46,7 +45,93 @@
 	<!-- Document Title
 	============================================= -->
 	<title>Acerca de GESCOM | Asistente administrativa en Mauricie</title>
-
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GESCOM">
+<meta property="og:locale" content="es_CA">
+<meta property="og:title" content="Acerca de GESCOM | Asistente administrativa en Mauricie">
+<meta property="og:description" content="Acerca de GESCOM, asistente administrativa en Mauricie: misión, valores y apoyo a emprendedores y pymes de Trois-Rivières y Shawinigan.">
+<meta property="og:url" content="https://gescom.digital/acerca-de.html">
+<meta property="og:image" content="https://gescom.digital/demos/finance/images/aurelie-portrait.webp">
+<meta property="og:image:alt" content="Aurélie Genin — GESCOM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Acerca de GESCOM | Asistente administrativa en Mauricie">
+<meta name="twitter:description" content="Acerca de GESCOM, asistente administrativa en Mauricie: misión, valores y apoyo a emprendedores y pymes de Trois-Rivières y Shawinigan.">
+<meta name="twitter:image" content="https://gescom.digital/demos/finance/images/aurelie-portrait.webp">
+<meta name="twitter:image:alt" content="Aurélie Genin — GESCOM">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://gescom.digital/#business",
+      "name": "GESCOM",
+      "legalName": "9517-6806 Québec inc",
+      "url": "https://gescom.digital/",
+      "telephone": "+1-819-996-1177",
+      "email": "gescom.mauricie@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1030, avenue Muguette",
+        "addressLocality": "Saint-Élie-de-Caxton",
+        "addressRegion": "QC",
+        "postalCode": "G0X 2N0",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Mauricie, Québec"
+        },
+        {
+          "@type": "City",
+          "name": "Trois-Rivières"
+        },
+        {
+          "@type": "City",
+          "name": "Shawinigan"
+        },
+        {
+          "@type": "City",
+          "name": "Saint-Élie-de-Caxton"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "image": "https://gescom.digital/demos/finance/images/aurelie-portrait.webp",
+      "logo": "https://gescom.digital/images/logo.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gescom.digital/#website",
+      "url": "https://gescom.digital/",
+      "name": "GESCOM",
+      "publisher": {
+        "@id": "https://gescom.digital/#business"
+      },
+      "inLanguage": [
+        "fr-CA",
+        "en-CA",
+        "es"
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://gescom.digital/acerca-de.html#webpage",
+      "url": "https://gescom.digital/acerca-de.html",
+      "name": "Acerca de GESCOM | Asistente administrativa en Mauricie",
+      "description": "Acerca de GESCOM, asistente administrativa en Mauricie: misión, valores y apoyo a emprendedores y pymes de Trois-Rivières y Shawinigan.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://gescom.digital/#website"
+      },
+      "about": {
+        "@id": "https://gescom.digital/#business"
+      }
+    }
+  ]
+}</script>
 </head>
 
 <body class="stretched">
@@ -121,7 +206,7 @@
 				<div class="container my-5">
 					<div class="row align-items-center">
 						<div class="col-lg-6 mb-5 mb-lg-0">
-				<img src="demos/finance/images/gemini-gescom.webp" alt="Aurélie Genin - GESCOM, asistente administrativa en Mauricie" class="rounded-6 shadow-lg">
+				<img loading="lazy" decoding="async" src="demos/finance/images/gemini-gescom.webp" alt="Aurélie Genin - GESCOM, asistente administrativa en Mauricie" class="rounded-6 shadow-lg">
 						</div>
 						<div class="col-lg-6 ps-lg-5">
 							<h5 class="text-uppercase font-body ls-2 color-2 mb-3">Nuestra historia</h5>
@@ -415,23 +500,10 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.bundle.js"></script>
+	<script src="js/jquery.js" defer></script>
+	<script src="js/functions.min.js?v=20260911" defer></script>
 
-	<script>
-		jQuery(document).ready( function(){
-			var lastScrollTop = 0;
-			window.addEventListener("scroll", function(event){
-				var st = jQuery(this).scrollTop();
-				if (st > lastScrollTop){
-					jQuery('#header.sticky-on-scrollup').removeClass('show-sticky-onscroll'); // Down Scroll
-				} else {
-					jQuery('#header.sticky-on-scrollup').addClass('show-sticky-onscroll'); // Up Scroll
-				}
-				lastScrollTop = st;
-			});
-		});
-	</script>
+	<script src="js/site.js?v=20260911" defer></script>
 
 
 	<link rel="stylesheet" href="css/olivia-chat.css?v=20260814-1">

@@ -4,7 +4,7 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
-	<meta name="author" content="SemiColonWeb">
+	<meta name="author" content="GESCOM">
 	<meta name="description" content="Contacte con GESCOM, asistente administrativa en Mauricie, para delegar tareas administrativas, presupuestos, facturación y gestión de correos.">
 
 	<!-- Font Imports -->
@@ -14,13 +14,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 	<!-- Core Style -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.min.css?v=20260911">
 
 	<!-- Font Icons -->
 	<link rel="stylesheet" href="css/font-icons.css">
 
 	<!-- Plugins/Components CSS -->
-	<link rel="stylesheet" href="css/swiper.css">
 
 	<!-- Niche Demos -->
 	<link rel="stylesheet" href="demos/finance/finance.css">
@@ -127,7 +126,93 @@
 			font-size: 16px;
 		}
 	</style>
-
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GESCOM">
+<meta property="og:locale" content="es_CA">
+<meta property="og:title" content="Contacto - GESCOM | Asistente administrativa en Mauricie">
+<meta property="og:description" content="Contacte con GESCOM, asistente administrativa en Mauricie, para delegar tareas administrativas, presupuestos, facturación y gestión de correos.">
+<meta property="og:url" content="https://gescom.digital/contacto.html">
+<meta property="og:image" content="https://gescom.digital/demos/finance/images/aurelie-portrait.webp">
+<meta property="og:image:alt" content="Aurélie Genin — GESCOM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contacto - GESCOM | Asistente administrativa en Mauricie">
+<meta name="twitter:description" content="Contacte con GESCOM, asistente administrativa en Mauricie, para delegar tareas administrativas, presupuestos, facturación y gestión de correos.">
+<meta name="twitter:image" content="https://gescom.digital/demos/finance/images/aurelie-portrait.webp">
+<meta name="twitter:image:alt" content="Aurélie Genin — GESCOM">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://gescom.digital/#business",
+      "name": "GESCOM",
+      "legalName": "9517-6806 Québec inc",
+      "url": "https://gescom.digital/",
+      "telephone": "+1-819-996-1177",
+      "email": "gescom.mauricie@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1030, avenue Muguette",
+        "addressLocality": "Saint-Élie-de-Caxton",
+        "addressRegion": "QC",
+        "postalCode": "G0X 2N0",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Mauricie, Québec"
+        },
+        {
+          "@type": "City",
+          "name": "Trois-Rivières"
+        },
+        {
+          "@type": "City",
+          "name": "Shawinigan"
+        },
+        {
+          "@type": "City",
+          "name": "Saint-Élie-de-Caxton"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "image": "https://gescom.digital/demos/finance/images/aurelie-portrait.webp",
+      "logo": "https://gescom.digital/images/logo.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gescom.digital/#website",
+      "url": "https://gescom.digital/",
+      "name": "GESCOM",
+      "publisher": {
+        "@id": "https://gescom.digital/#business"
+      },
+      "inLanguage": [
+        "fr-CA",
+        "en-CA",
+        "es"
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://gescom.digital/contacto.html#webpage",
+      "url": "https://gescom.digital/contacto.html",
+      "name": "Contacto - GESCOM | Asistente administrativa en Mauricie",
+      "description": "Contacte con GESCOM, asistente administrativa en Mauricie, para delegar tareas administrativas, presupuestos, facturación y gestión de correos.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://gescom.digital/#website"
+      },
+      "about": {
+        "@id": "https://gescom.digital/#business"
+      }
+    }
+  ]
+}</script>
 </head>
 
 <body class="stretched">
@@ -440,23 +525,10 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.bundle.js"></script>
+	<script src="js/jquery.js" defer></script>
+	<script src="js/functions.min.js?v=20260911" defer></script>
 
-	<script>
-		jQuery(document).ready( function(){
-			var lastScrollTop = 0;
-			window.addEventListener("scroll", function(event){
-				var st = jQuery(this).scrollTop();
-				if (st > lastScrollTop){
-					jQuery('#header.sticky-on-scrollup').removeClass('show-sticky-onscroll'); // Down Scroll
-				} else {
-					jQuery('#header.sticky-on-scrollup').addClass('show-sticky-onscroll'); // Up Scroll
-				}
-				lastScrollTop = st;
-			});
-		});
-	</script>
+	<script src="js/site.js?v=20260911" defer></script>
 
 
 	<link rel="stylesheet" href="css/olivia-chat.css?v=20260814-1">

@@ -1,0 +1,11 @@
+---
+import LegacyDocument from '../layouts/LegacyDocument.astro';
+import { loadPage, pageNames } from '../lib/legacy-pages.mjs';
+
+export async function getStaticPaths() {
+  return (await pageNames()).map(page => ({ params: { page }, props: { file: `${page}.html` } }));
+}
+
+const page = await loadPage(Astro.props.file);
+---
+<LegacyDocument {page} />

@@ -1,55 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gescom.digital/</loc>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/demo-finance-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/demo-finance-es.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/" />
   </url>
   <url>
     <loc>https://gescom.digital/demo-finance-en.html</loc>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/demo-finance-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/demo-finance-es.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/" />
   </url>
   <url>
     <loc>https://gescom.digital/demo-finance-es.html</loc>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/demo-finance-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/demo-finance-es.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/" />
   </url>
   <url>
     <loc>https://gescom.digital/contact.html</loc>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/contact-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/contacto.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/contact.html" />
   </url>
   <url>
     <loc>https://gescom.digital/contact-en.html</loc>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/contact-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/contacto.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/contact.html" />
   </url>
   <url>
     <loc>https://gescom.digital/contacto.html</loc>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/contact-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/contacto.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/contact.html" />
   </url>
   <url>
     <loc>https://gescom.digital/a-propos.html</loc>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/a-propos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/about-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/acerca-de.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/a-propos.html" />
   </url>
   <url>
     <loc>https://gescom.digital/about-en.html</loc>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/a-propos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/about-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/acerca-de.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/a-propos.html" />
   </url>
   <url>
     <loc>https://gescom.digital/acerca-de.html</loc>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/a-propos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/about-en.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/acerca-de.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/a-propos.html" />
   </url>
   <url>
     <loc>https://gescom.digital/politique-confidentialite.html</loc>
-    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/politique-confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/politica-de-privacidad.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/politique-confidentialite.html" />
   </url>
   <url>
     <loc>https://gescom.digital/mentions-legales.html</loc>
-    <priority>0.4</priority>
+
   </url>
   <url>
     <loc>https://gescom.digital/privacy-policy.html</loc>
-    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/politique-confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/politica-de-privacidad.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/politique-confidentialite.html" />
   </url>
   <url>
     <loc>https://gescom.digital/politica-de-privacidad.html</loc>
-    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/politique-confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/politica-de-privacidad.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/politique-confidentialite.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/gestion-administrative-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/gestion-administrative-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/administrative-support-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/gestion-administrativa-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/gestion-administrative-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/administrative-support-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/gestion-administrative-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/administrative-support-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/gestion-administrativa-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/gestion-administrative-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/gestion-administrativa-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/gestion-administrative-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/administrative-support-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/gestion-administrativa-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/gestion-administrative-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/devis-facturation-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/devis-facturation-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/quotes-invoicing-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/presupuestos-facturacion-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/devis-facturation-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/quotes-invoicing-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/devis-facturation-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/quotes-invoicing-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/presupuestos-facturacion-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/devis-facturation-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/presupuestos-facturacion-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/devis-facturation-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/quotes-invoicing-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/presupuestos-facturacion-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/devis-facturation-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/tenue-de-livres-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/tenue-de-livres-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/bookkeeping-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/teneduria-de-libros-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/tenue-de-livres-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/bookkeeping-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/tenue-de-livres-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/bookkeeping-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/teneduria-de-libros-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/tenue-de-livres-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/teneduria-de-libros-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/tenue-de-livres-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/bookkeeping-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/teneduria-de-libros-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/tenue-de-livres-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/rapports-taxes-tps-tvq-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/rapports-taxes-tps-tvq-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/gst-qst-reports-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/informes-tps-tvq-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/rapports-taxes-tps-tvq-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/gst-qst-reports-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/rapports-taxes-tps-tvq-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/gst-qst-reports-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/informes-tps-tvq-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/rapports-taxes-tps-tvq-mauricie.html" />
+  </url>
+  <url>
+    <loc>https://gescom.digital/informes-tps-tvq-mauricie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gescom.digital/rapports-taxes-tps-tvq-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gescom.digital/gst-qst-reports-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://gescom.digital/informes-tps-tvq-mauricie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gescom.digital/rapports-taxes-tps-tvq-mauricie.html" />
   </url>
 </urlset>
