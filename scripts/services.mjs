@@ -18,7 +18,7 @@ export const locales = {
     prepare: 'Getting started', faq: 'Your questions', related: 'Related services',
     cta: 'Let’s discuss your needs', ctaText: 'Ready to delegate this task? Contact Aurélie Genin to discuss your needs, the documents available and your preferred working schedule.',
     local: 'Based in Saint-Élie-de-Caxton, GESCOM provides remote support to entrepreneurs, self-employed professionals and small businesses in Mauricie, including Trois-Rivières and Shawinigan.',
-    processTitle: 'How does working together work?',
+    processTitle: 'How will we work together?',
     process: ['Together, we define the tasks you want to delegate, your priorities and deadlines.', 'You share the necessary documents and access using the arrangements we agree on.', 'I handle the agreed tasks and keep you informed of any points requiring your approval.'],
     more: 'Explore this service',
   },

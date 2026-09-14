@@ -6,7 +6,7 @@ import { locales, services } from '../scripts/services.mjs';
 
 const local = process.env.BASE_URL ? null : await startServer();
 const baseURL = process.env.BASE_URL || local.baseURL;
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.BROWSER_CHANNEL ? { channel: process.env.BROWSER_CHANNEL } : {});
 await mkdir('test-results', { recursive: true });
 try {
   for (const width of [390, 1440]) {
@@ -41,7 +41,14 @@ try {
       await page.locator('.olivia-launcher').click();
       await expect(page.locator('#olivia-chat-root')).toHaveClass(/is-open/);
       await page.locator('.olivia-close').click();
+      const guide = page.locator('section[aria-labelledby="local-support"]');
+      await expect(guide.locator('details')).toHaveCount(4);
+      await guide.locator('summary').first().click();
+      await expect(guide.locator('details').first()).toHaveAttribute('open', '');
+      for (const service of services) await expect(guide.locator(`a[href="${service[language].slug}.html"]`)).toBeVisible();
+      if (width === 390) assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1), false, `${language}: home overflow`);
       if (language === 'fr') {
+        await guide.screenshot({ path: `test-results/home-content-${width}.png` });
         await page.locator('#footer').screenshot({ path: `test-results/footer-${width}.png` });
         await page.evaluate(() => window.scrollTo(0, 0));
         await page.screenshot({ path: `test-results/home-${width}.png` });

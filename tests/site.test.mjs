@@ -31,6 +31,9 @@ test('sitemap covers exactly the canonical pages and language alternates are rec
   assert.equal(urls.length, pages.size);
   assert.deepEqual(new Set(urls), new Set([...pages.values()].map(canonical)));
   for (const [file, html] of pages) {
+    const sitemapEntry = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(([, entry]) => entry.includes(`<loc>${canonical(html)}</loc>`))[1];
+    const sitemapAlternates = tags(sitemapEntry, 'xhtml:link');
+    assert.deepEqual(sitemapAlternates.map(tag => [tag.hreflang, tag.href]), tags(html, 'link').filter(tag => tag.hreflang).map(tag => [tag.hreflang, tag.href]), file);
     for (const alternate of tags(html, 'link').filter(tag => tag.hreflang)) {
       const target = new URL(alternate.href).pathname.slice(1) || 'demo-finance.html';
       assert.ok(pages.has(target), `${file}: ${target}`);
@@ -53,6 +56,31 @@ test('page links and directly referenced local assets exist', async () => {
         assert.ok(targetHTML?.includes(`id="${url.hash.slice(1)}"`), `${file}: missing anchor ${value}`);
       }
     }
+  }
+});
+
+test('sharing metadata and structured entities describe each canonical page once', async () => {
+  for (const [file, html] of pages) {
+    const meta = tags(html, 'meta');
+    for (const key of ['og:title', 'og:description', 'og:url', 'og:image', 'og:locale', 'og:site_name', 'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image']) {
+      const matches = meta.filter(tag => (tag.property || tag.name) === key);
+      assert.equal(matches.length, 1, `${file}: ${key}`);
+      assert.ok(matches[0].content, `${file}: ${key}`);
+    }
+    assert.equal(meta.find(tag => tag.property === 'og:url').content, canonical(html), file);
+    assert.equal(meta.find(tag => tag.property === 'og:description').content, meta.find(tag => tag.name === 'description').content, file);
+    const image = new URL(meta.find(tag => tag.property === 'og:image').content);
+    await assert.doesNotReject(access(new URL(image.pathname.slice(1), root)), file);
+    const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    assert.equal(blocks.length, 1, file);
+    const graph = JSON.parse(blocks[0][1])['@graph'];
+    const ids = graph.map(node => node['@id']);
+    assert.equal(new Set(ids).size, ids.length, `${file}: duplicate schema entities`);
+    const page = graph.find(node => ['WebPage', 'ContactPage', 'AboutPage'].includes(node['@type']));
+    assert.equal(page.url, canonical(html), file);
+    assert.equal(page.inLanguage, tags(html, 'html')[0].lang, file);
+    assert.ok(graph.some(node => node['@type'] === 'WebSite' && node.name === 'GESCOM'), file);
+    assert.ok(!/href="(?:\/|https:\/\/gescom\.digital\/)?demo-finance\.html["#?]/.test(html), `${file}: home links must use the canonical URL`);
   }
 });
 

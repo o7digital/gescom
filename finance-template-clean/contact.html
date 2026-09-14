@@ -126,48 +126,92 @@
 			font-size: 16px;
 		}
 	</style>
-
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GESCOM">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:title" content="Contact - GESCOM | Adjointe administrative en Mauricie">
+<meta property="og:description" content="Contactez GESCOM, adjointe administrative en Mauricie (Trois-Rivières, Shawinigan) pour déléguer vos tâches administratives, devis, facturation et gestion des courriels.">
+<meta property="og:url" content="https://gescom.digital/contact.html">
+<meta property="og:image" content="https://gescom.digital/demos/finance/images/aurelie-portrait.webp">
+<meta property="og:image:alt" content="Aurélie Genin — GESCOM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact - GESCOM | Adjointe administrative en Mauricie">
+<meta name="twitter:description" content="Contactez GESCOM, adjointe administrative en Mauricie (Trois-Rivières, Shawinigan) pour déléguer vos tâches administratives, devis, facturation et gestion des courriels.">
+<meta name="twitter:image" content="https://gescom.digital/demos/finance/images/aurelie-portrait.webp">
+<meta name="twitter:image:alt" content="Aurélie Genin — GESCOM">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://gescom.digital/#business",
-  "name": "GESCOM",
-  "legalName": "9517-6806 Québec inc",
-  "url": "https://gescom.digital/",
-  "telephone": "+1-819-996-1177",
-  "email": "gescom.mauricie@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "1030, avenue Muguette",
-    "addressLocality": "Saint-Élie-de-Caxton",
-    "addressRegion": "QC",
-    "postalCode": "G0X 2N0",
-    "addressCountry": "CA"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "AdministrativeArea",
-      "name": "Mauricie, Québec"
+      "@type": "ProfessionalService",
+      "@id": "https://gescom.digital/#business",
+      "name": "GESCOM",
+      "legalName": "9517-6806 Québec inc",
+      "url": "https://gescom.digital/",
+      "telephone": "+1-819-996-1177",
+      "email": "gescom.mauricie@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1030, avenue Muguette",
+        "addressLocality": "Saint-Élie-de-Caxton",
+        "addressRegion": "QC",
+        "postalCode": "G0X 2N0",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Mauricie, Québec"
+        },
+        {
+          "@type": "City",
+          "name": "Trois-Rivières"
+        },
+        {
+          "@type": "City",
+          "name": "Shawinigan"
+        },
+        {
+          "@type": "City",
+          "name": "Saint-Élie-de-Caxton"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "image": "https://gescom.digital/demos/finance/images/aurelie-portrait.webp",
+      "logo": "https://gescom.digital/images/logo.webp"
     },
     {
-      "@type": "City",
-      "name": "Trois-Rivières"
+      "@type": "WebSite",
+      "@id": "https://gescom.digital/#website",
+      "url": "https://gescom.digital/",
+      "name": "GESCOM",
+      "publisher": {
+        "@id": "https://gescom.digital/#business"
+      },
+      "inLanguage": [
+        "fr-CA",
+        "en-CA",
+        "es"
+      ]
     },
     {
-      "@type": "City",
-      "name": "Shawinigan"
-    },
-    {
-      "@type": "City",
-      "name": "Saint-Élie-de-Caxton"
-    },
-    {
-      "@type": "Country",
-      "name": "Canada"
+      "@type": "ContactPage",
+      "@id": "https://gescom.digital/contact.html#webpage",
+      "url": "https://gescom.digital/contact.html",
+      "name": "Contact - GESCOM | Adjointe administrative en Mauricie",
+      "description": "Contactez GESCOM, adjointe administrative en Mauricie (Trois-Rivières, Shawinigan) pour déléguer vos tâches administratives, devis, facturation et gestion des courriels.",
+      "inLanguage": "fr-CA",
+      "isPartOf": {
+        "@id": "https://gescom.digital/#website"
+      },
+      "about": {
+        "@id": "https://gescom.digital/#business"
+      }
     }
-  ],
-  "image": "https://gescom.digital/demos/finance/images/aurelie-portrait.webp",
-  "logo": "https://gescom.digital/images/logo.webp"
+  ]
 }</script>
 </head>
 
@@ -415,9 +459,9 @@
 									<div class="widget">
 										<h5 class="fw-semibold mb-4">Navigation</h5>
 										<ul class="widget_links widget-li-noicon">
-											<li class="mb-2"><a href="demo-finance.html">Home</a></li>
+											<li class="mb-2"><a href="/">Home</a></li>
 										<li class="mb-2"><a href="a-propos.html">A Propos de Gescom</a></li>
-											<li class="mb-2"><a href="demo-finance.html#services">Services</a></li>
+											<li class="mb-2"><a href="/#services">Services</a></li>
 											<li class="mb-2"><a href="contact.html">Contact</a></li>
 										</ul>
 									</div>
@@ -465,7 +509,7 @@
 							<span class="mx-2">|</span>
 							<a href="mentions-legales.html">Mentions légales</a>
 							<span class="mx-2">|</span>
-							<a href="demo-finance.html" class="btn btn-sm bg-color-2 text-white rounded-pill px-3 py-1"><i class="bi-house me-1"></i>Retour Home</a>
+							<a href="/" class="btn btn-sm bg-color-2 text-white rounded-pill px-3 py-1"><i class="bi-house me-1"></i>Retour Home</a>
 						</div>
 
 					</div>
