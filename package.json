@@ -3,13 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && astro dev",
+    "build:content": "node scripts/build.mjs",
+    "build": "npm run build:content && astro build && node scripts/copy-assets.mjs",
+    "preview": "astro preview",
     "test": "node --test tests/site.test.mjs",
     "test:browser": "node tests/browser.mjs",
     "test:deployed": "node tests/deployed.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
+    "astro": "^7.3.2",
     "esbuild": "0.28.2"
   }
 }

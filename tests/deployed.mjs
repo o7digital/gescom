@@ -8,7 +8,7 @@ const get = path => fetch(new URL(path, base), { redirect: 'manual', signal: Abo
 const sitemap = await get('/sitemap.xml');
 assert.equal(sitemap.status, 200);
 const xml = await sitemap.text();
-assert.equal(xml, await readFile('finance-template-clean/sitemap.xml', 'utf8'));
+assert.equal(xml, await readFile('dist/sitemap.xml', 'utf8'));
 const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 for (const url of urls) {
   const path = new URL(url).pathname;

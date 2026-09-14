@@ -4,7 +4,8 @@ import { readFile, readdir, access, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { locales, services } from '../scripts/services.mjs';
 
-const root = new URL('../finance-template-clean/', import.meta.url);
+const root = new URL('../dist/', import.meta.url);
+const sourceRoot = new URL('../finance-template-clean/', import.meta.url);
 const domain = 'https://gescom.digital';
 const files = (await readdir(root)).filter(file => file.endsWith('.html'));
 const pages = new Map(await Promise.all(files.map(async file => [file, await readFile(new URL(file, root), 'utf8')])));
@@ -20,7 +21,7 @@ test('all 25 pages have a unique title, description, canonical and one H1', () =
     const title = html.match(/<title>(.*?)<\/title>/s)?.[1];
     assert.ok(title, file); assert.ok(!titles.has(title), file); titles.add(title);
     assert.ok(tags(html, 'meta').find(tag => tag.name === 'description')?.content, file);
-    assert.equal(canonical(html), `${domain}/${file === 'demo-finance.html' ? '' : file}`, file);
+    assert.equal(canonical(html), `${domain}/${file === 'index.html' ? '' : file}`, file);
     assert.ok(!/noindex/.test(html), file);
   }
 });
@@ -35,7 +36,7 @@ test('sitemap covers exactly the canonical pages and language alternates are rec
     const sitemapAlternates = tags(sitemapEntry, 'xhtml:link');
     assert.deepEqual(sitemapAlternates.map(tag => [tag.hreflang, tag.href]), tags(html, 'link').filter(tag => tag.hreflang).map(tag => [tag.hreflang, tag.href]), file);
     for (const alternate of tags(html, 'link').filter(tag => tag.hreflang)) {
-      const target = new URL(alternate.href).pathname.slice(1) || 'demo-finance.html';
+      const target = new URL(alternate.href).pathname.slice(1) || 'index.html';
       assert.ok(pages.has(target), `${file}: ${target}`);
       const backlinks = tags(pages.get(target), 'link').filter(tag => tag.hreflang);
       assert.ok(backlinks.some(link => link.href === canonical(html)), `${file}: reciprocal ${target}`);
@@ -49,7 +50,7 @@ test('page links and directly referenced local assets exist', async () => {
       const value = tag.href || tag.src || tag.srcset;
       if (!value || /^(#|https?:|mailto:|tel:|data:|\/\/)/.test(value)) continue;
       const url = new URL(value, `${domain}/${file}`);
-      const target = url.pathname.slice(1) || 'demo-finance.html';
+      const target = url.pathname.slice(1) || 'index.html';
       await assert.doesNotReject(access(new URL(target, root)), `${file}: ${value}`);
       if (url.hash && target.endsWith('.html')) {
         const targetHTML = pages.get(target);
@@ -86,14 +87,15 @@ test('sharing metadata and structured entities describe each canonical page once
 
 test('existing footer markup is preserved byte for byte', () => {
   for (const [file, hash] of Object.entries(footerHashes)) {
-    const footer = pages.get(file).match(/<footer id="footer"[\s\S]*?<\/footer>/)[0];
+    const outputFile = file === 'demo-finance.html' ? 'index.html' : file;
+    const footer = pages.get(outputFile).match(/<footer id="footer"[\s\S]*?<\/footer>/)[0];
     assert.equal(createHash('sha256').update(footer).digest('hex'), hash, file);
   }
 });
 
 test('home navigation, local business details and service discovery agree in every language', () => {
   for (const [language, locale] of Object.entries(locales)) {
-    const html = pages.get(locale.homeFile);
+    const html = pages.get(locale.homeFile === 'demo-finance.html' ? 'index.html' : locale.homeFile);
     const header = html.match(/<header\b[\s\S]*?<\/header>/)[0];
     assert.ok(header.includes(`href="${locale.about}"`));
     assert.ok(header.includes(`href="${locale.contact}"`));
@@ -121,5 +123,5 @@ test('optimized pages use deferred modular scripts and a smaller stylesheet', as
       assert.ok(html.includes(`src="${script.src}" defer`), `${file}: ${script.src}`);
     }
   }
-  assert.ok((await stat(new URL('style.min.css', root))).size < (await stat(new URL('style.css', root))).size * 0.85);
+  assert.ok((await stat(new URL('style.min.css', root))).size < (await stat(new URL('style.css', sourceRoot))).size * 0.85);
 });

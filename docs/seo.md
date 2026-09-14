@@ -1,6 +1,8 @@
 # Suivi SEO GESCOM — septembre 2026
 
-Le site utilise du HTML statique et un générateur Node, sans Astro.
+Le site utilise Astro en génération statique. Pendant la première phase de
+migration, Astro rend les documents existants avec un layout commun et le
+générateur Node continue d’alimenter les pages de services multilingues.
 Les modifications sont faites sur `dev`, qui contenait déjà `origin/main`.
 
 ## Constats vérifiés

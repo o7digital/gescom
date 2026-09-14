@@ -1,0 +1,7 @@
+---
+import LegacyDocument from '../layouts/LegacyDocument.astro';
+import { loadPage } from '../lib/legacy-pages.mjs';
+
+const page = await loadPage('demo-finance.html');
+---
+<LegacyDocument {page} />

@@ -1,6 +1,8 @@
-# GESCOM
+# GESCOM — Astro
 
-Le site statique publié par Vercel se trouve dans `finance-template-clean`.
+Le site est construit avec Astro en mode statique. Les routes Astro se trouvent
+dans `src/pages`, le layout de transition dans `src/layouts` et le résultat
+publié par Vercel dans `dist`.
 
 ```sh
 npm ci
@@ -10,10 +12,13 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-Le build génère les douze pages de services FR/EN/ES depuis
+Le build prépare d’abord les douze pages de services FR/EN/ES depuis
 `scripts/services.mjs`, leur sitemap et les versions minifiées de `style.css`
-et `js/functions.js`. Modifier les textes des services dans ce fichier source,
-puis relancer le build. Les autres pages HTML restent éditables directement.
+et `js/functions.js`. Astro génère ensuite les 25 routes tout en conservant les
+URL historiques `.html`, puis copie uniquement les actifs utilisés dans `dist`.
+Modifier les textes des services dans ce fichier source, puis relancer le build.
+Les autres pages HTML restent temporairement éditables dans
+`finance-template-clean` et sont rendues par le layout Astro.
 
 Les rubriques complémentaires et les FAQ des accueils et services se trouvent
 dans `scripts/content.mjs` en français, anglais et espagnol. Le bloc d’accueil

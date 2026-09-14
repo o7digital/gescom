@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "finance-template-clean",
+  "outputDirectory": "dist",
   "redirects": [
     {
       "source": "/demo-finance.html",
